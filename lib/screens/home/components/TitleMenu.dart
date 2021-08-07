@@ -98,7 +98,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-            color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+            color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
       ),
       /*
           Positioned(

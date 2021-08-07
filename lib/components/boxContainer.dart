@@ -14,48 +14,71 @@ class TextBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
+    return Row(mainAxisAlignment: MainAxisAlignment.center,
+        /*
+        padding: EdgeInsets.only(
+            left: kDefaultPadding * 2,
+            right: kDefaultPadding * 2,
+            bottom: kDefaultPadding),
+            */
         children: <Widget>[
-          boxContainerCard(
-            // image: "assets/images/image_1.png",
-            title: "Preset 1",
-            //country: "Russia",
-            //price: 440,
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(), //change later
+          Container(
+            //constraints: BoxConstraints(maxWidth: 325),
+            decoration: BoxDecoration(
+                color: Colors.black38,
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            alignment: Alignment.center,
+            padding: EdgeInsets.only(
+              top: 10,
+              bottom: 15,
+              left: 10,
+              right: 25,
+            ),
+            //width: 325,
+            height: 50,
+
+            //scrollDirection: Axis.horizontal,
+            child: Wrap(
+              children: <Widget>[
+                boxContainerCard(
+                  // image: "assets/images/image_1.png",
+                  title: "Preset 1",
+                  //country: "Russia",
+                  //price: 440,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(), //change later
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
-          BlackBoxContainerCard(
-            // image: "assets/images/image_2.png",
-            title: "Preset 2",
-            //country: "Russia",
-            //price: 440,
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                BlackBoxContainerCard(
+                  // image: "assets/images/image_2.png",
+                  title: "Preset 2",
+                  //country: "Russia",
+                  //price: 440,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(),
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
-          BlackBoxContainerCard(
-            //image: "assets/images/image_3.png",
-            title: "Preset 3",
-            // country: "Russia",
-            //price: 440,
-            press: () {},
-          ),
-        ],
-      ),
-    );
+                BlackBoxContainerCard(
+                  //image: "assets/images/image_3.png",
+                  title: "Preset 3",
+                  // country: "Russia",
+                  //price: 440,
+                  press: () {},
+                ),
+              ],
+            ),
+          )
+        ]);
   }
 }
 
@@ -79,17 +102,16 @@ class boxContainerCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(
         left: paddingleft,
-        bottom: kPaddingMenu,
+        //bottom: kPaddingMenu,
       ),
-      width: 76,
-      //height: 25,
-      child: Column(
+      width: 75,
+      height: 25,
+      child: Wrap(
         children: <Widget>[
-          //Image.asset(image),
           GestureDetector(
             onTap: press,
             child: Container(
-              padding: EdgeInsets.all(kDefaultPadding / 2),
+              padding: EdgeInsets.all(7),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -103,7 +125,7 @@ class boxContainerCard extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text("$title",
                     style:
-                        TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+                        TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
               ),
             ),
           )
@@ -133,16 +155,16 @@ class BlackBoxContainerCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(
         left: paddingleft,
-        bottom: kPaddingMenu,
+        //bottom: kPaddingMenu,
       ),
-      width: 76,
-      child: Column(
+      width: 75,
+      height: 25,
+      child: Wrap(
         children: <Widget>[
-          //Image.asset(image),
           GestureDetector(
             onTap: press,
             child: Container(
-              padding: EdgeInsets.all(kDefaultPadding / 2),
+              padding: EdgeInsets.all(7),
               decoration: BoxDecoration(
                 color: const Color(0xFF111111),
                 borderRadius: BorderRadius.only(
@@ -156,8 +178,8 @@ class BlackBoxContainerCard extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text("$title",
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 13,
+                        color: const Color(0xFF333333),
+                        fontSize: 12,
                         fontWeight: FontWeight.bold)),
               ),
             ),

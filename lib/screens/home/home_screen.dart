@@ -24,11 +24,58 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  //var heightFromAppBar = AppBar().preferredSize.height;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(widget.data), fit: BoxFit.cover)),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+        child: Container(
+            color: Colors.black.withOpacity(0.45),
+            child: Scaffold(
+                backgroundColor: Colors.transparent,
+                body: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      //HeaderWithSearchBox(size: size),
+                      // SizedBox(height: 56 + kPaddingMenu),
+
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      HomeAppBar(),
+                      //SizedBox(height: 12),
+                      TextBox(),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      TitleWithMoreBtn(title: "Mood", press: () {}),
+                      //StatusButton(),
+                      FeaturedPlants(),
+                      TitleWithStatusButton(title: "Music", press: () {}),
+                      //FeaturedPlants(),
+                      RecomendsPlants(),
+                      TitleWithStatusButton(title: "Ambient", press: () {}),
+                      Ambient(),
+                      //SizedBox(height: kDefaultPadding),
+                    ],
+                  ),
+                ))),
+      ),
+    );
+
+    /*
+    Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: buildAppBar(),
+        appBar: TestAppBar(),
         //bottomNavigationBar: MyBottomNavBar(),
         body: Stack(children: <Widget>[
           Container(
@@ -42,12 +89,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Container(
+          SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 //HeaderWithSearchBox(size: size),
-                SizedBox(height: 130),
+                SizedBox(height: 56 + kPaddingMenu),
 
                 Container(
                   decoration: BoxDecoration(
@@ -69,8 +116,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           )
         ]));
+        */
   }
+}
 
+/*
   AppBar buildAppBar() {
     return AppBar(
         automaticallyImplyLeading: true,
@@ -101,4 +151,42 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
         ]);
   }
+}
+*/
+
+class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        automaticallyImplyLeading: true,
+        centerTitle: false,
+        title: const Text('Check Point',
+            style: TextStyle(fontWeight: FontWeight.w500)),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Image.asset("assets/images/logo_checkpoint.png"),
+          onPressed: () {},
+        ),
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {},
+                child: Icon(
+                  Icons.dark_mode_outlined,
+                  size: 26.0,
+                ),
+              )),
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {},
+                child: Icon(Icons.alarm),
+              )),
+        ]);
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(56);
 }

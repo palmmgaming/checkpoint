@@ -6,6 +6,6 @@ const kTextColor = Color(0xFF3C4046);
 const kBackgroundColor = Color(0xFFFFFFFF);
 
 const double kDefaultPadding = 21.0;
-const double kPaddingMenu = 25.0;
-const double kPaddingTextBox = 10;
+const double kPaddingMenu = 21.0; //25
+const double kPaddingTextBox = 7;
 const double paddingleft = 14;
