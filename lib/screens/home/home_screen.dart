@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+//import 'package:flutter_svg/svg.dart';
 import 'dart:ui';
 
 import 'package:plant_app/components/boxContainer.dart';
-import 'package:plant_app/components/status_button.dart';
+//import 'package:plant_app/components/status_button.dart';
 import 'package:plant_app/screens/home/components/ambient.dart';
 import '../../../constants.dart';
 import 'package:plant_app/screens/home/components/featurred_plants.dart';
@@ -75,7 +75,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return AppBar(
         automaticallyImplyLeading: true,
         centerTitle: false,
-        title: const Text('Check Point'),
+        title: const Text('Check Point',
+            style: TextStyle(fontWeight: FontWeight.bold)),
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(

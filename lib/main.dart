@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 //import 'package:flutter/services.dart';
 import 'package:plant_app/constants.dart';
 import 'package:plant_app/screens/details/components/MoodBody.dart';
@@ -19,15 +20,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return CupertinoApp(
+
+        //combine Material with Cupertino
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: <LocalizationsDelegate<dynamic>>[
+          DefaultMaterialLocalizations.delegate,
+          DefaultWidgetsLocalizations.delegate,
+          DefaultCupertinoLocalizations.delegate,
+        ],
+
+        //debugShowCheckedModeBanner: false,
         title: 'Check Point',
-        theme: ThemeData(
-          scaffoldBackgroundColor: kBackgroundColor,
-          primaryColor: kPrimaryColor,
-          textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
+        theme: const CupertinoThemeData(brightness: Brightness.light),
         home: SplashScreen());
   }
 }
@@ -44,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (_) => MoodBody(data: "assets/images/5.jpg")));
+          builder: (_) => MoodBody(data: "assets/images/3.jpg")));
     });
   }
 
