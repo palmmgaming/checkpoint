@@ -16,13 +16,13 @@ class FeaturedPlants extends StatelessWidget {
       child: Row(
         children: <Widget>[
           WhiteMood(
-            image: "assets/images/3.jpg",
+            image: "assets/images/10.png",
             press: () async {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
-                        MoodBody(data: "assets/images/3.jpg")),
+                        MoodBody(data: "assets/images/10.png")),
               );
             },
           ),
@@ -33,6 +33,17 @@ class FeaturedPlants extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => MoodBody(data: "assets/images/5.jpg"),
+                ),
+              );
+            },
+          ),
+          FeaturePlantCard(
+            image: "assets/images/3.jpg",
+            press: () async {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MoodBody(data: "assets/images/3.jpg"),
                 ),
               );
             },
