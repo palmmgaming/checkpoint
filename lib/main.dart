@@ -66,12 +66,33 @@ class _SplashScreenState extends State<SplashScreen> {
               'assets/images/logo_checkpoint.png',
               height: 120,
             ),
+
+            //Text below logo
+            /*
+            Text('Check Point',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.white,
+                )),
+
+            Text('Hapiness in One Click',
+                style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                  fontSize: 15,
+                  color: Colors.white,
+                )),
+                */
             SizedBox(
               height: 20,
             ),
+
+            //Circular Loading Animation
+            /*
             CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
             )
+            */
           ],
         ),
       ),
