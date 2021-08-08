@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (_) => MoodBody(data: "assets/images/3.jpg")));
+          builder: (_) => MoodBody(data: "assets/images/10.png")));
     });
   }
 

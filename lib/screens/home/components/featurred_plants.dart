@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 //import 'package:plant_app/screens/details/details_screen.dart';
 import 'package:plant_app/screens/details/components/MoodBody.dart';
+import 'package:plant_app/screens/home/home_screen.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:plant_app/screens/details/components/Background.dart';
 
 import '../../../constants.dart';
 
@@ -11,7 +14,10 @@ class FeaturedPlants extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int transitionMoodChange = 500;
+
     return SingleChildScrollView(
+      //key: PageStorageKey<String>('pageOne'),
       scrollDirection: Axis.horizontal,
       child: Row(
         children: <Widget>[
@@ -20,9 +26,18 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        MoodBody(data: "assets/images/10.png")),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/10.png")),
+
+                /*
+                PageRouteBuilder(
+                  pageBuilder: (context, animation1, animation2) =>
+                      HomeScreen(data: "assets/images/10.png"),
+                  transitionDuration: Duration(seconds: 0),
+                ),
+                */
               );
             },
           ),
@@ -31,9 +46,10 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => MoodBody(data: "assets/images/5.jpg"),
-                ),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/5.jpg")),
               );
             },
           ),
@@ -42,9 +58,10 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => MoodBody(data: "assets/images/3.jpg"),
-                ),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/3.jpg")),
               );
             },
           ),
@@ -53,9 +70,10 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => MoodBody(data: "assets/images/6.jpg"),
-                ),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/6.jpg")),
               );
             },
           ),
@@ -64,9 +82,10 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => MoodBody(data: "assets/images/1.jpg"),
-                ),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/1.jpg")),
               );
             },
           ),
@@ -75,9 +94,10 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => MoodBody(data: "assets/images/2.jpg"),
-                ),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/2.jpg")),
               );
             },
           ),
@@ -86,9 +106,10 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => MoodBody(data: "assets/images/4.jpg"),
-                ),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/4.jpg")),
               );
             },
           ),
@@ -97,9 +118,10 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => MoodBody(data: "assets/images/7.jpg"),
-                ),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/7.jpg")),
               );
             },
           ),
@@ -108,9 +130,10 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => MoodBody(data: "assets/images/8.jpg"),
-                ),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/8.jpg")),
               );
             },
           ),
@@ -119,9 +142,10 @@ class FeaturedPlants extends StatelessWidget {
             press: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => MoodBody(data: "assets/images/9.jpg"),
-                ),
+                PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: transitionMoodChange),
+                    child: HomeScreen(data: "assets/images/9.jpg")),
               );
             },
           )
